@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'alert_perubahan_nominal_diskon_ujroh' => 'Inputer telah melakukan perubahan/penyesuaian ujroh nasabah, pastikan dokumen persetujuan telah disetujui komite!',
+    'no_data' => 'Tidak ada data yang bisa ditampilkan.',
+    'image' => 'Foto',
+    'profile-image' => 'Foto profil',
+    'full-name' => 'Nama lengkap',
+    'about' => 'Tentang',
+    'save' => 'Simpan',
+    'country' => 'Negara',
+    'address' => 'Alamat',
+    'edit-profile' => 'Edit profil',
+    'setting' => 'Pengaturan',
+    'change-password' => 'Ubah password',
+    'start_date' => 'Tanggal mulai',
+    'end_date' => 'Tanggal berakhir',
+    'item_order' => 'No Urut',
+    'publish_start' => 'Tanggal Publish',
+    'publish_end' => 'Tanggal berakhir',
+    'name' => 'Nama',
+    'add' => 'Tambah',
+    'description' => 'Deskripsi',
+    'position' => 'Jabatan',
+];
