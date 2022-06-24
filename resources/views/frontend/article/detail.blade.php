@@ -155,7 +155,7 @@
                             @foreach($recent as $recents)
                             <div class="news-content">
                               <h4>
-                                  <a href="blog-details.html">{{ $recents->title }} ... <i
+                                  <a href="blog-details.html">{{ $recents->title     }} ... <i
                                           class="flaticon-arrow-1"></i>
                                   </a>
                               </h4>
