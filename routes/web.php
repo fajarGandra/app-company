@@ -30,9 +30,8 @@ use App\Http\Controllers\Frontend\ArticlesController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.dashboard');
-});
+Route::get('/', [HomeController::class, 'index'])->name('login_form');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

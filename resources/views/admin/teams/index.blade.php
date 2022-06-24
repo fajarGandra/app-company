@@ -23,7 +23,6 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">{{ __('messages.image') }}</th>
                                 <th scope="col">{{ __('messages.name') }}</th>
                                 <th scope="col">{{ __('messages.position') }}</th>
                                 <th scope="col">{{ __('messages.description') }}</th>

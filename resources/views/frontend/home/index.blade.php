@@ -1,942 +1,1051 @@
+@extends('layouts.mainblog')
 
-<!DOCTYPE html>
-<html lang="en">
+@section('page-css')
+@endsection
 
-<head>
-  <!-- Title of The Page -->
-  <title>Gaspar | Personal Portfolio HTML Template</title>
-  <!-- Meta Informations -->
-  <meta charset="utf-8">
-  <meta name="description" content="Bootstrap 5 Responsive Gaspar | Personal Portfolio HTML Template">
-  <meta name="keywords"
-    content="Gaspar | Personal Portfolio HTML Template , template, bootstrap 5, ui template kit, Gaspar Personal Portfolio, html, css">
-  <meta name="author" content="Gaspar | Personal Portfolio HTML Template">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <!-- Favicons -->
-  <link href="{{ asset('frontend/assets/img/favicon.png') }}" rel="icon">
-  <!-- Google Fonts -->
-  <link href="{{ asset('frontend/assets/fonts/fonts.css') }}" rel="stylesheet">
-  <!-- Bootstrap CSS-->
-  <link href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
-  <!-- Font-Awesome CSS -->
-  <link href="{{ asset('frontend/assets/css/all.css') }}" rel="stylesheet">
-  <!-- Animate CSS-->
-  <link href="{{ asset('frontend/assets/css/animate.min.css') }}" rel="stylesheet">
-  <!-- Glightbox CSS-->
-  <link href="{{ asset('frontend/assets/css/glightbox.min.css') }}" rel="stylesheet">
-  <!-- Swiper CSS-->
-  <link href="{{ asset('frontend/assets/css/swiper-bundle.min.css') }}" rel="stylesheet">
-  <!-- Style CSS File -->
-  <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
-  <!-- Colors CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/colors.css') }}" />
-  <!-- Live Style Switcher - demo only -->
-  <link id="style-switch" href="{{ asset('frontend/assets/css/colors/orange.css') }}" media="screen" rel="stylesheet" type="text/css">
-  <!-- Responsive CSS File -->
-  <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet">
-</head>
-
-<body>
-  <div class="gaspar" data-magic-cursor="show" data-color="crimson">
-    <!-- Pre Loader -->
-    <div id="preloader">
-      <div class="loader_line"></div>
-    </div>
-    <!-- Pre Loader end -->
-     <!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-cog" aria-hidden="true"></i>
-		</div>
-		<h4>Unlimited Colors</h4>
-    <ul class="">
-      <li id="preset1" class=""><img
-        src="{{ asset('frontend/assets/img/colors/orange.png') }}" alt="orange" /></li>
-      <li id="preset2" class=""><img
-        src="{{ asset('frontend/assets/img/colors/purple.png') }}" alt="purple" /></li>
-      <li id="preset3" class=""><img
-        src="{{ asset('frontend/assets/img/colors/red.png') }}" alt="red" /></li>
-      <li id="preset4" class=""><img
-        src="{{ asset('frontend/assets/img/colors/violet.png') }}" alt="violet" /></li>
-      <li id="preset5" class=""><img
-        src="{{ asset('frontend/assets/img/colors/blue.png') }}" alt="blue" /></li>
-      <li id="preset6" class=""><img
-        src="{{ asset('frontend/assets/img/colors/golden.png') }}" alt="golden" /></li>
-      <li id="preset7" class=""><img
-        src="{{ asset('frontend/assets/img/colors/magenta.png') }}" alt="magenta" /></li>
-      <li id="preset8" class=""><img
-        src="{{ asset('frontend/assets/img/colors/yellowgreen.png') }}" alt="yellowgreen" /></li>
-      <li id="preset9" class=""><img
-        src="{{ asset('frontend/assets/img/colors/green.png') }}" alt="green" /></li>
-      <li id="preset10" class=""><img
-        src="{{ asset('frontend/assets/img/colors/yellow.png') }}" alt="yellow" /></li>
-    </ul>
-    <h4>Light Mode</h4>
-        <div class="switch" id="switcherrr">
-          <a href="https://avstechnolabs.com/Themeforest/Gaspar/02/Dark/index.html"><i class="fas fa-moon open"></i></a>
+@section('content')
+    <!-- Bnner Section -->
+    <section class="banner-section style-two">
+        <div class="swiper-container banner-slider">
+            <div class="swiper-wrapper">
+                @foreach ($caroseul as $caroseuls)
+                    <!-- Slide Item -->
+                    <div class="swiper-slide"
+                        style="background-image: url({{ Storage::url($caroseuls->image) }});color:#6a1010 !important;">
+                        <div class="content-outer">
+                            <div class="content-box">
+                                <div class="inner">
+                                    <h1 style="color:{{ $caroseuls->text_color }} !important;">{{ $caroseuls->title }}
+                                    </h1>
+                                    <div class="text" style="color:{{ $caroseuls->text_color }} !important;">
+                                        {!! $caroseuls->description !!}
+                                    </div>
+                                    <div class="link-box">
+                                        <a href="{{ $caroseuls->btn_link }}"
+                                            class="theme-btn style-four"><span>{{ $caroseuls->btn_name }}</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <h4 class="title">Magic Cursor</h4>
-        <ul class="cursor">
-          <li><a class="showme show" href="#"></a></li>
-          <li><a class="hide" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="svg" id="Capa_1"
-                enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"
-               >
-                <g>
-                  <path d="m451.002 183.574h29.997v84.853h-29.997z"
-                    transform="matrix(.707 -.707 .707 .707 -23.318 395.706)"></path>
-                  <path d="m271.002 3.574h29.997v84.853h-29.997z"
-                    transform="matrix(.707 -.707 .707 .707 51.241 215.706)"></path>
-                  <path d="m423.574 31.002h84.853v29.997h-84.853z"
-                    transform="matrix(.707 -.707 .707 .707 103.961 342.985)"></path>
-                  <path
-                    d="m42.422 512 150.458-150.458 42.114 125.464 152.988-362.988-362.988 152.988 125.464 42.114-150.458 150.458z">
-                  </path>
-                  <path d="m361 0h30v61h-30z"></path>
-                  <path d="m451 121h61v30h-61z"></path>
-                </g>
-              </svg></a></li>
-        </ul>
-        <a target="_blank" href="https://themeforest.net/item/gaspar-personal-portfolio-html-template/36192601"
-          class="purchse-btn"><i class="fa fa-shopping-cart"></i> Purchase</a>
-	</div>
-   <!-- Style switcher End -->
-    <!-- ======= Header ======= -->
-    <header id="header" class="header-transparent">
-      <div class="profile">
-        <img src="{{ asset('frontend/assets/img/4x6 fajar.jpg') }}" alt="" class="img-fluid">
-        <h1>Alex Smith</h1>
-      </div>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero"><i class="fas fa-house-user"></i>Home</a></li>
-          <li><a class="nav-link scrollto" href="#about"><i class="fas fa-user-alt"></i>About</a></li>
-          <li><a class="nav-link scrollto" href="#services"><i class="fas fa-poll"></i>Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio"> <i class="fas fa-briefcase"></i>Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#blog"><i class="fas fa-file"></i>Blog</a></li>
-          <li><a class="nav-link scrollto" href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
-        </ul>
-        <i class="fas fa-bars mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-      <div class="social-links">
-        <a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="javascript:void(0)" class="google-plus"><i class="fab fa-skype"></i></a>
-      </div>
-    </header><!-- End Header -->
- <!-- ======= Main Section ======= -->
-    <main id="main">
-      <!-- ======= Hero Section ======= -->
-      <section id="hero" class="pt-30">
-        <div class="container">
-          <span class="background"></span>
-          <div class="row">
-            <div class="col-12 wow bounceInUp" data-wow-duration="3s">
-              <div class="hero-img">
-                <img src="{{ asset('frontend/assets/img/hero-bg.jpg') }}" alt="">
-              </div>
+        <div class="banner-slider-nav">
+            <div class="banner-slider-control banner-slider-button-prev"><span><i class="flaticon-arrow-1"></i></span></div>
+            <div class="banner-slider-control banner-slider-button-next"><span><i class="flaticon-arrow-1"></i></span>
             </div>
-            <div class="col-12 wow bounceInDown" data-wow-duration="3s">
-              <div class="hero-box">
-                <h1>Alex Smith</h1>
-                <h2>I am <span class="typed"></span></h2>
-                <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="fas fa-angle-down"></i></a>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-      <!-- End Hero -->
-      <!-- ======= About Me Section ======= -->
-      <section id="about" class="about">
-        <div class="container wow fadeInLeftBig animated" data-wow-duration="1.5s">
-          <div class="section-title wow fadeInDown animated" data-wow-duration="2s">
-            <span>About Me</span>
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="row">
-            <div
-              class="col-xl-4 col-md-12 d-flex align-items-stretch justify-content-center justify-content-lg-start wow rollIn"
-              data-wow-duration="2s">
-              <div class="about-img">
-                <div class="image" style="background: url('frontend/assets/img/4x6 fajar.jpg') center center no-repeat;">
+    </section>
+    <!-- End Bnner Section -->
+
+    <!-- Services Section Two -->
+    <section class="services-section-two">
+        <div class="auto-container">
+            <div class="wrapper-box">
+                <div class="sec-title text-center">
+                    <div class="sub-title">Services
+                    </div>
+                    <h2>Services We Offered</h2>
+                    <div class="text">We have facility to produce advance work various industrial applications based on
+                        <br> specially developed technology.
+                    </div>
                 </div>
-              </div>
+                <div class="row">
+                    <div class="theme_carousel owl-theme owl-carousel"
+                        data-options='{"loop": true, "center": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "480" :{ "items" : "1" }, "768" :{ "items" : "2" } , "992":{ "items" : "3" }, "1200":{ "items" : "3" }}}'>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-machinery"></i>
+                                    <div class="shape"><img src="{{ asset('frontend/assets/images/shape/shape-6.png') }}"
+                                            alt=""></div>
+                                </div>
+                                <div class="image"><img src="{{ asset('frontend/assets/images/resource/image-36.jpg') }}"
+                                        alt=""></div>
+                                <div class="lower-content">
+                                    <h5>Centerless</h5>
+                                    <h4>Grinding & Polishing</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-laser"></i>
+                                    <div class="shape"><img src="{{ asset('frontend/assets/images/shape/shape-6.png') }}"
+                                            alt=""></div>
+                                </div>
+                                <div class="image"><img src="{{ asset('frontend/assets/images/resource/image-37.jpg') }}"
+                                        alt=""></div>
+                                <div class="lower-content">
+                                    <h5>Cutting</h5>
+                                    <h4>Laser & Plasma</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-welder"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-38.jpg') }}" alt="">
+                                </div>
+                                <div class="lower-content">
+                                    <h5>Welding</h5>
+                                    <h4>Metal & Tungsten</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-machinery"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-36.jpg') }}" alt="">
+                                </div>
+                                <div class="lower-content">
+                                    <h5>Centerless</h5>
+                                    <h4>Grinding & Polishing</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-laser"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-37.jpg') }}" alt="">
+                                </div>
+                                <div class="lower-content">
+                                    <h5>Cutting</h5>
+                                    <h4>Laser & Plasma</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-welder"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-38.jpg') }}" alt="">
+                                </div>
+                                <div class="lower-content">
+                                    <h5>Welding</h5>
+                                    <h4>Metal & Tungsten</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-machinery"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-36.jpg') }}"
+                                        alt=""></div>
+                                <div class="lower-content">
+                                    <h5>Centerless</h5>
+                                    <h4>Grinding & Polishing</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-laser"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}"
+                                            alt=""></div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-37.jpg') }}"
+                                        alt=""></div>
+                                <div class="lower-content">
+                                    <h5>Cutting</h5>
+                                    <h4>Laser & Plasma</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 service-block-two">
+                            <div class="inner-box">
+                                <div class="icon">
+                                    <i class="flaticon-welder"></i>
+                                    <div class="shape"><img
+                                            src="{{ asset('frontend/assets/images/shape/shape-6.png') }}"
+                                            alt=""></div>
+                                </div>
+                                <div class="image"><img
+                                        src="{{ asset('frontend/assets/images/resource/image-38.jpg') }}"
+                                        alt=""></div>
+                                <div class="lower-content">
+                                    <h5>Welding</h5>
+                                    <h4>Metal & Tungsten</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col-xl-8 col-md-12 d-flex flex-column align-items-stretch">
-              <div class="content ps-lg-4 d-flex flex-column justify-content-center">
-                <div class="row wow fadeInLeft animated" data-wow-duration="2s">
-                  <div class="col-sm-6">
-                    <ul>
-                      <li><i class="fas fa-arrow-right"></i><strong>Name:</strong> <span>Alex Smith</span>
-                      </li>
-                      <li><i class="fas fa-arrow-right"></i><strong>Website:</strong>
-                       <a href="#"><span>www.example.com</span></a>
-                      </li>
-                      <li><i class="fas fa-arrow-right"></i><strong>Phone:</strong> <a href="tel:(+01)123-456-789"><span>(+01)123-456-789</span></a>
-                      </li>
-                      <li><i class="fas fa-arrow-right"></i><strong>City:</strong> <span>New York, USA</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-sm-6">
-                    <ul>
-                      <li><i class="fas fa-arrow-right"></i><strong>Age:</strong> <span>30</span></li>
-                      <li><i class="fas fa-arrow-right"></i><strong>Degree:</strong> <span>Master</span></li>
-                      <li><i class="fas fa-arrow-right"></i><strong>Email:</strong>
-                       <a href="mailto:info@example.com"><span>info@example.com</span></a>
-                      </li>
-                      <li><i class="fas fa-arrow-right"></i><strong>Freelance:</strong> <span>Available</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="row wow bounceInRight" data-wow-duration="2s">
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="fas fa-smile" style="color: #20b38e;"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p><strong>Happy Clients</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
+        </div>
+    </section>
 
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="fas fa-folder-open" style="color:#8a1ac2;"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p><strong>Projects</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        tan
-                      </p>
+    <!-- CTA Section -->
+    <section class="cta-section style-two">
+        <div class="auto-container">
+            <div class="wrapper-box">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2><i class="flaticon-machinery-1"></i> Delivering Results with Solid Dependability</h2>
                     </div>
-                  </div>
-
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="fas fa-clock" style="color: #2cbdee;"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p><strong>Years of experience</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
+                    <div class="col-lg-5">
+                        <div class="link-btn">
+                            <a href="contact.html" class="theme-btn style-five"><span>Get a Quote</span></a>
+                            <a href="tel:08963648078" class="theme-btn style-three"><span><i
+                                        class="flaticon-phone-call"></i> +089 636 - 48018</span></a>
+                        </div>
                     </div>
-                  </div>
-
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="fas fa-award" style="color: #ffb459;"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p><strong>Awards</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div><!-- End .content-->
-              <div class="row">
-                <div class="skills-content ps-lg-4">
-                  <div class="col-12 col-md-6">
-                    <div class="progress">
-                      <span class="skill">HTML <i class="val">100%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                    <div class="progress">
-                      <span class="skill">CSS <i class="val">90%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="progress">
-                      <span class="skill">JavaScript <i class="val">75%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="progress">
-                      <span class="skill">React <i class="val">75%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="progress">
-                      <span class="skill">Ui/Ux Design <i class="val">75%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="progress">
-                      <span class="skill">jQuery <i class="val">75%</i></span>
-                      <div class="progress-bar-wrap">
-                        <div class="progress-bar  progress-bar-striped progress-bar-animated" role="progressbar"
-                          aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="resume wow fadeInRightBig animated" data-wow-duration="1.5s">
-            <div class="section-title wow fadeInDown animated" data-wow-duration="2s">
-              <span>My Resume</span>
-              <h2>My Resume</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </section>
+
+    <!-- Facts section -->
+    <section class="facts-section-two" style="background-image: url(frontend/assets/images/background/bg-3.jpg);">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-video">
+                        <div class="video-box">
+                            <div class="video-btn"><a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s"
+                                    class="overlay-link play-now ripple" data-fancybox="gallery" data-caption=""><i
+                                        class="flaticon-play-button"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="wrapper-box" style="background-image: url(frontend/assets/images/resource/image-40.jpg);">
+                        <div class="row">
+                            <div class="col-md-6 column facts-block-two">
+                                <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="content">
+                                        <div class="icon"><i class="flaticon-machinery-2"></i></div>
+                                        <div class="count-outer count-box">
+                                            <span class="count-text" data-speed="3000"
+                                                data-stop="6.4">0</span><span>K</span>
+                                        </div>
+                                        <div class="text">Projects <br>
+                                            Done Successfully</div>
+                                        <div class="link"><a href="#" class="link-btn">Our Projects <i
+                                                    class="flaticon-right-arrow-3"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 column facts-block-two">
+                                <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="content">
+                                        <div class="icon"><i class="flaticon-factory-2"></i></div>
+                                        <div class="count-outer count-box">
+                                            <span>+</span><span class="count-text" data-speed="3000"
+                                                data-stop="49">0</span>
+                                        </div>
+                                        <div class="text">Branches <br>
+                                            Running Worldwide</div>
+                                        <div class="link"><a href="#" class="link-btn">Our Location <i
+                                                    class="flaticon-right-arrow-3"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section two -->
+    <section class="about-section-two">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image"><img src="{{ asset('frontend/assets/images/resource/image-22.jpg') }}"
+                            alt=""></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="sec-title mb-30">
+                        <div class="sub-title">About Company</div>
+                        <h2>Leading Industrial Solution <br> Provider <span>Since 1988</span></h2>
+                        <div class="text">It is a long established fact that a readers will be distracted by readable
+                            content tof a page when looking at its layout. The point of using is that it has a more-or-less
+                            normal distribution.</div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="flaticon-low-price"></i></div>
+                        <h4>Reduce Your Cost</h4>
+                        <div class="text">Find fault with a man who chooses to enjoy. </div>
+                        <div class="skills">
+                            <!--Skill Item-->
+                            <div class="skill-item">
+                                <div class="skill-bar">
+                                    <div class="bar-inner">
+                                        <div class="bar progress-line" data-width="84">
+                                            <div class="skill-percentage">
+                                                <div class="count-box"><span class="count-text" data-speed="2000"
+                                                        data-stop="84">0</span>%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="flaticon-timer"></i></div>
+                        <h4>Shorten Delivery Time</h4>
+                        <div class="text">Undertakes laborious physical exercise except to obtain. </div>
+                        <div class="skills">
+                            <!--Skill Item-->
+                            <div class="skill-item">
+                                <div class="skill-bar">
+                                    <div class="bar-inner">
+                                        <div class="bar progress-line" data-width="65">
+                                            <div class="skill-percentage">
+                                                <div class="count-box"><span class="count-text" data-speed="2000"
+                                                        data-stop="65">0</span>%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="link-btn">
+                        <a href="about.html" class="theme-btn style-six"><span>Read More</span></a>
+                        <a href="#" class="theme-btn style-seven"><i class="flaticon-download-1"></i><span> Our
+                                Report</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whychoose us section -->
+    <section class="whychoose-us-section" style="background-image: url(frontend/assets/images/background/bg-7.jpg);">
+        <div class="auto-container">
+            <div class="row m-0 top-content justify-content-between align-items-center">
+                <div class="sec-title light">
+                    <div class="sub-title">Highlights</div>
+                    <h2>Reason for Choosing Us</h2>
+                </div>
+                <div class="text">We have facility to produce advance work various industrial applications <br> based on
+                    specially developed technology.</div>
+            </div>
+            <div class="wrapper-box">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-clock-4"></i></div>
+                            <h4>On Time Delivery</h4>
+                            <div class="text">Indignation dislike beguiled demoralized by the charms of pleasure blinded.
+                            </div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-robot-arm-1"></i></div>
+                            <h4>Smart Technology</h4>
+                            <div class="text">Foresee the pain & trouble
+                                that are bound ensue equal
+                                blame their duty.</div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-winner-1"></i></div>
+                            <h4>Easy & Affordable</h4>
+                            <div class="text">These cases are perfectly simple easy too distinguish free hour prevents.
+                            </div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-engineer-1"></i></div>
+                            <h4>Qualified Specialists</h4>
+                            <div class="text">Foresee the pain & trouble
+                                that are bound ensue equal
+                                blame their duty.</div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-global-warming"></i></div>
+                            <h4>Clean & Unpolluted</h4>
+                            <div class="text">These cases are perfectly simple easy too distinguish free hour prevents.
+                            </div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 why-choose-us-block">
+                        <div class="inner-box">
+                            <div class="icon"><i class="flaticon-support"></i></div>
+                            <h4>24/7 Support</h4>
+                            <div class="text">Indignation dislike beguiled demoralized by the charms of pleasure blinded.
+                            </div>
+                            <div class="link"><a href="#" class="link-btn">Read More <i
+                                        class="flaticon-right-arrow-3"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Team Section two -->
+    <section class="team-section-two pb-0">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Behind Our Success</div>
+                <h2>Our Professional Team </h2>
+                <div class="text">We have facility to produce advance work various industrial applications based on <br>
+                    specially developed technology.</div>
             </div>
             <div class="row">
-              <div class="col-lg-6 wow bounceInLeft animated" data-wow-duration="2s">
-                <h3 class="resume-title">Sumary</h3>
-                <div class="resume-item pb-0">
-                  <h4>Alice Barkley</h4>
-                  <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
-                      developing user-centered digital/print marketing material from initial concept to final, polished
-                      deliverable.</em></p>
-                    <ul>
-                      <li>Portland par 127,Orlando, FL</li>
-                      <li>(123) 456-7891</li>
-                      <li>info@example.com</li>
-                    </ul>
-                  </div>
-                <h3 class="resume-title">Education</h3>
-                <div class="resume-item">
-                  <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2015 - 2016</h5>
-                  <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                  <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum
-                    qui
-                    ut dignissimos deleniti nerada porti sand markend</p>
+                <div class="theme_carousel owl-theme owl-carousel"
+                    data-options='{"loop": true, "center": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "480" :{ "items" : "1" }, "768" :{ "items" : "2" } , "992":{ "items" : "3" }, "1200":{ "items" : "3" }}}'>
+                    @foreach ($teams as $team)
+                        <div class="col-lg-12 team-block-two">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <img src="{{ Storage::url($team->image) }}" alt="{{ $team->name }}">
+                                </div>
+                                <div class="designation">{{ $team->jabatan }}</div>
+                                <div class="overlay">
+                                    <div>
+                                        <h4>{{ $team->name }}</h4>
+                                        <div class="text">
+                                            {{ $team->deskripsi }}
+                                        </div>
+                                        <ul class="social-icon">
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="resume-item">
-                  <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2010 - 2014</h5>
-                  <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                  <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione
-                    eius
-                    unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart
-                    dila</p>
-                </div>
-              </div>
-              <div class="col-lg-6 wow fadeInLeft animated" data-wow-duration="2s">
-                <h3 class="resume-title">Professional Experience</h3>
-                <div class="resume-item">
-                  <h4>Senior graphic design specialist</h4>
-                  <h5>2019 - Present</h5>
-                  <p><em>Experion, New York, NY </em></p>
-                    <ul>
-                      <li>Lead in the design, development, and implementation of the graphic, layout, and production
-                        communication materials</li>
-                      <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the
-                        project. </li>
-                      <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of
-                        the
-                        design</li>
-                      <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-                    </ul>
-                </div>
-                <div class="resume-item">
-                  <h4>Graphic design specialist</h4>
-                  <h5>2017 - 2018</h5>
-                  <p><em>Stepping Stone Advertising, New York, NY</em></p>
-                    <ul>
-                      <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and
-                        advertisements).</li>
-                      <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                      <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                      <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-                    </ul>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section><!-- End About Me Section -->
+    </section>
 
-      <!-- ======= My Services Section ======= -->
-      <section id="services" class="services">
-        <div class="container wow rollIn animated" data-wow-duration="1.5s">
-
-          <div class="section-title wow bounceIn animated" data-wow-duration="3s">
-            <span>My Services</span>
-            <h2>My Services</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 col-xl-3 d-flex align-items-stretch  mb-lg-0 wow swing animated"
-              data-wow-duration="3s">
-              <div class="icon-box">
-                <div class="icon"><i class="fas fa-palette"></i></div>
-                <h4 class="title"><a href="">Web Design</a></h4>
-                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro autem, enim
-                  necessitatibus quae ab placeat consectetur velit qui, sint aliquam sunt.</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 d-flex align-items-stretch  mb-lg-0 wow swing animated"
-              data-wow-duration="3s">
-              <div class="icon-box">
-                <div class="icon"><i class="fas fa-radiation"></i></div>
-                <h4 class="title"><a href="">Animation</a></h4>
-                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro autem, enim
-                  necessitatibus quae ab placeat consectetur velit qui, sint aliquam sunt.</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 d-flex align-items-stretch  mb-lg-0 wow swing animated"
-              data-wow-duration="3s">
-              <div class="icon-box">
-                <div class="icon"><i class="fas fa-code"></i></div>
-                <h4 class="title"><a href="">Web Development</a></h4>
-                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro autem, enim
-                  necessitatibus quae ab placeat consectetur velit qui, sint aliquam sunt.</p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 d-flex align-items-stretch  mb-lg-0  wow swing animated"
-              data-wow-duration="3s">
-              <div class="icon-box">
-               <div class="icon"><i class="fas fa-arrows-alt"></i></div>
-                <h4 class="title"><a href="">Fully Responsive</a></h4>
-                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro autem, enim
-                  necessitatibus quae ab placeat consectetur velit qui, sint aliquam sunt.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section><!-- End My Services Section -->
-
-      <!-- ======= Testimonials Section ======= -->
-      <section id="testimonials">
-        <div class="container position-relative testimonials wow fadeIn" data-wow-duration="5s">
-          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="{{ asset('frontend/assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                    Accusantium
-                    quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="fas fa-quote-right"></i>
-                  </p>
+    <!-- Projects Section Two -->
+    <section class="projects-section-two">
+        <div class="sec-bg" style="background-image: url(frontend/assets/images/background/bg-4.jpg);"></div>
+        <div class="auto-container">
+            <div class="row m-0 top-content justify-content-between">
+                <div class="sec-title">
+                    <div class="sub-title">Our Works</div>
+                    <h2>Recently Completed Works</h2>
                 </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="{{ asset('frontend/assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                    quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="fas fa-quote-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="{{ asset('frontend/assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
-                    tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="fas fa-quote-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="{{ asset('frontend/assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
-                    minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="fas fa-quote-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="{{ asset('frontend/assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
-                    culpa
-                    labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="fas fa-quote-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
+                <div class="text">We have facility to produce advance work various industrial applications <br> based on
+                    specially developed technology.</div>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section><!-- End Testimonials Section -->
-
-      <!-- ======= My Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
-        <div class="container wow fadeInUp" data-wow-duration="1.5s">
-
-          <div class="section-title wow fadeInDown" data-wow-duration="2s">
-            <span>My Portfolio</span>
-            <h2>My Portfolio</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <ul id="portfolio-flters" class="d-flex justify-content-center wow flipInX animated" data-wow-duration="2s">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-
-          <div class="row portfolio-container">
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-app">
-              <div class="portfolio-img wow bounceInLeft" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="App 1"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-web">
-              <div class="portfolio-img wow bounceInUp" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-2.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Web 3"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-app">
-              <div class="portfolio-img wow bounceInRight" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-3.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="App 2"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-card">
-              <div class="portfolio-img wow bounceInLeft" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-4.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-4.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Card 2"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-web">
-              <div class="portfolio-img wow bounceInDown" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-5.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-5.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Web 2"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-app">
-              <div class="portfolio-img wow bounceInRight" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-6.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-6.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="App 3"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-card">
-              <div class="portfolio-img wow bounceInLeft" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-7.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-7.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Card 1"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-card">
-              <div class="portfolio-img wow bounceInUp" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-8.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-8.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Card 3"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6 portfolio-item filter-web">
-              <div class="portfolio-img wow bounceInRight" data-wow-duration="2.5s"><img
-                  src="{{ asset('frontend/assets/img/portfolio/portfolio-9.jpg') }}" class="img-fluid" alt=""></div>
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <a href="{{ asset('frontend/assets/img/portfolio/portfolio-9.jpg') }}" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox preview-link" title="Web 3"><i class="fas fa-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                    class="fas fa-paperclip"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section><!-- End My Portfolio Section -->
-
-      <!-- ======= Pricing Section ======= -->
-      <section id="pricing" class="pricing">
-        <div class="container wow bounceInUp animated" data-wow-duration="1.5s">
-          <div class="section-title wow fadeInDown animated" data-wow-duration="2s">
-            <span>Pricing</span>
-            <h2>Pricing</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <div class="row">
-
-            <div class="col-lg-3 col-sm-6 wow rollIn animated" data-wow-duration="2s">
-              <div class="box">
-                <h3>Free</h3>
-                <h4><sup>$</sup>0<span> / month</span></h4>
-                <ul>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum dolor.</li>
-                  <li class="na">Lorem ipsum dolor sit.</li>
-                  <li class="na">Lorem, ipsum.</li>
-                  <li class="na">Lorem, ipsum.</li>
+            <!--Filter-->
+            <div class="filters">
+                <ul class="filter-tabs filter-btns">
+                    <li class="filter active" data-role="button" data-filter=".all">All Cases</li>
+                    <li class="filter" data-role="button" data-filter=".cat-1">Cutting</li>
+                    <li class="filter" data-role="button" data-filter=".cat-2">Engineering </li>
+                    <li class="filter" data-role="button" data-filter=".cat-3">Machining</li>
+                    <li class="filter" data-role="button" data-filter=".cat-4">Technology</li>
+                    <li class="filter" data-role="button" data-filter=".cat-5">Welding</li>
                 </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
+                <div class="link"><a href="#" class="link-btn">All Projects <i
+                            class="flaticon-right-arrow-3"></i></a></div>
             </div>
 
-            <div class="col-lg-3 col-sm-6 wow rollIn animated" data-wow-duration="3s">
-              <div class="box featured">
-                <h3>Business</h3>
-                <h4><sup>$</sup>19<span> / month</span></h4>
-                <ul>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum dolor.</li>
-                  <li>Lorem ipsum dolor sit.</li>
-                  <li class="na">Lorem, ipsum.</li>
-                  <li class="na">Lorem, ipsum.</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
+            <!--Sortable Galery-->
+            <div class="sortable-masonry">
 
-            <div class="col-lg-3 col-sm-6  wow rollIn animated" data-wow-duration="4s">
-              <div class="box">
-                <h3>Developer</h3>
-                <h4><sup>$</sup>29<span> / month</span></h4>
-                <ul>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum dolor.</li>
-                  <li>Lorem ipsum dolor sit.</li>
-                  <li>Lorem, ipsum.</li>
-                  <li class="na">Lorem, ipsum.</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6 wow rollIn animated" data-wow-duration="5s">
-              <div class="box">
-                <span class="advanced">Advanced</span>
-                <h3>Ultimate</h3>
-                <h4><sup>$</sup>49<span> / month</span></h4>
-                <ul>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum dolor.</li>
-                  <li>Lorem ipsum dolor sit.</li>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum.</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section><!-- End Pricing Section -->
-      <!-- ======= My Blog Section ======= -->
-      <section id="blog" class="blog">
-        <div class="container">
-          <div class="section-title wow fadeInDown animated" data-wow-duration="2s">
-            <span>Blog</span>
-            <h2>Blog</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="row justify-content-center">
-              <div class="col-xl-4 col-sm-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                   <a href="blog-page.html"><img src="{{ asset('frontend/assets/img/blog/01.jpg') }}" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <span>Nature</span>
-                    <a href="blog-page.html">
-                      <h4>Lorem, ipsum dolor.</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><i class="fa fa-tags"></i></li>
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 31, 2020</a></li>
-                      <li><a href="#">12 Comments</a></li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, tempore.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-sm-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <a href="blog-page.html"><img src="{{ asset('frontend/assets/img/blog/02.jpg') }}" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <span>Lifestyle</span>
-                    <a href="blog-page.html">
-                      <h4>Lorem, ipsum dolor.</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><i class="fa fa-tags"></i></li>
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 31, 2020</a></li>
-                      <li><a href="#">12 Comments</a></li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, tempore.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-sm-6">
-                <div class="blog-post">
-                  <div class="blog-thumb">
-                    <a href="blog-page.html"><img src="{{ asset('frontend/assets/img/blog/03.jpg') }}" alt=""></a>
-                  </div>
-                  <div class="down-content">
-                    <span>Night</span>
-                    <a href="blog-page.html">
-                      <h4>Lorem, ipsum dolor.</h4>
-                    </a>
-                    <ul class="post-info">
-                      <li><i class="fa fa-tags"></i></li>
-                      <li><a href="#">Admin</a></li>
-                      <li><a href="#">May 31, 2020</a></li>
-                      <li><a href="#">12 Comments</a></li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, tempore.</p>
-                  </div>
-                </div>
-              </div>
-            <div class="col-lg-12">
-              <ul class="page-numbers">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End My Blog Section -->
-
-      <!-- ======= Contact Me Section ======= -->
-      <section id="contact" class="contact">
-        <div class="container wow fadeInLeftBig animated" data-wow-duration="1.5s">
-          <div class="section-title wow fadeInDownBig animated" data-wow-duration="2s">
-            <span>Contact Me</span>
-            <h2>Contact Me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="row">
-                <div class="col-md-12 wow bounceInDown animated" data-wow-duration="2s">
-                  <div class="info-box m-0">
-                    <i class="fas fa-share-alt"></i>
-                    <h3>Social Profiles</h3>
-                    <div class="social-links">
-                      <a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i></a>
-                      <a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook"></i></a>
-                      <a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a>
-                      <a href="javascript:void(0)" class="google-plus"><i class="fab fa-google"></i></a>
-                      <a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <div class="items-container row">
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-1">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-23.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-4">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-24.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-1 cat-3">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-25.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-2 cat-5">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-26.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-3 cat-2">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-27.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-1">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-28.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-4 cat-5">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-29.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Block -->
+                    <div class="col-lg-3 col-md-6 project-block masonry-item all cat-1 cat-5 cat-3">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ asset('frontend/assets/images/resource/image-30.jpg') }}" alt="">
+                            </div>
+                            <div class="overlay-content">
+                                <div>
+                                    <div class="category"># Welding</div>
+                                    <h4>Pipeline Welding</h4>
+                                </div>
+                                <div class="link-btn"><a href="project-details.html"><span
+                                            class="flaticon-arrow-1"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 wow bounceInLeft animated" data-wow-duration="2s">
-                  <div class="info-box">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Me</h3>
-                    <p>contact@example.com</p>
-                  </div>
-                </div>
-                <div class="col-md-6 wow bounceInRight animated" data-wow-duration="2s">
-                  <div class="info-box">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Call Me</h3>
-                    <p>+123456789</p>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-lg-6 wow bounceIn animated" data-wow-duration="2s">
-              <form class="email-form">
+        </div>
+    </section>
+
+    <!-- Testimonials section Two -->
+    <section class="testimonials-section-two style-two">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Testimonials</div>
+                <h2>Trusted From Our Clients</h2>
+            </div>
+            <div class="row">
+                <div class="theme_carousel owl-theme owl-carousel"
+                    data-options='{"loop": true, "center": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" } , "992":{ "items" : "2" }, "1200":{ "items" : "2" }}}'>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">Indasto manufacturing has been a great supplier to our company. Their quick
+                                turn around is [fantastic] and they are very responsive.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-4.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Lillian Grace</h4>
+                            <div class="designation">Green Valley Intenational</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">I also was given great feedback on the quality, the product manager was
+                                excited about how good they looked. Thank you so very much.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-5.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Nathan Felix</h4>
+                            <div class="designation">Novartis Pharmaceuticals</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">Indasto manufacturing has been a great supplier to our company. Their quick
+                                turn around is [fantastic] and they are very responsive.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-4.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Lillian Grace</h4>
+                            <div class="designation">Green Valley Intenational</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">I also was given great feedback on the quality, the product manager was
+                                excited about how good they looked. Thank you so very much.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-5.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Nathan Felix</h4>
+                            <div class="designation">Novartis Pharmaceuticals</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">Indasto manufacturing has been a great supplier to our company. Their quick
+                                turn around is [fantastic] and they are very responsive.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-4.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Lillian Grace</h4>
+                            <div class="designation">Green Valley Intenational</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">I also was given great feedback on the quality, the product manager was
+                                excited about how good they looked. Thank you so very much.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-5.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Nathan Felix</h4>
+                            <div class="designation">Novartis Pharmaceuticals</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">Indasto manufacturing has been a great supplier to our company. Their quick
+                                turn around is [fantastic] and they are very responsive.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-4.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Lillian Grace</h4>
+                            <div class="designation">Green Valley Intenational</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block-two">
+                        <div class="inner-box">
+                            <div class="rating">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                            </div>
+                            <div class="text">I also was given great feedback on the quality, the product manager was
+                                excited about how good they looked. Thank you so very much.</div>
+                            <div class="image">
+                                <div class="image-wrapper"><img
+                                        src="{{ asset('frontend/assets/images/resource/author-5.jpg') }}"
+                                        alt=""></div>
+                            </div>
+                            <h4>Nathan Felix</h4>
+                            <div class="designation">Novartis Pharmaceuticals</div>
+                            <div class="border-shape">
+                                <div class="quote-icon"><span class="flaticon-right-quote-1"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="sec-bg" style="background-image: url(frontend/assets/images/background/bg-5.jpg);"></div>
+        <div class="auto-container">
+            <div class="row m-0 top-content justify-content-between align-items-center">
+                <div class="sec-title light">
+                    <div class="sub-title">Pricing & Plans</div>
+                    <h2>Our Flexible Pricing Plans</h2>
+                </div>
+                <div class="text">We have facility to produce advance work various industrial applications <br> based on
+                    specially developed technology.</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 pricing-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="category-wrapper">
+                            <div class="category">Basic Plan</div>
+                        </div>
+                        <div class="text">*rates are subject to change</div>
+                        <div class="link-btn"><a href="#" class="theme-btn"><span>Get Started <i
+                                        class="flaticon-right-arrow-3"></i></span></a></div>
+                        <ul class="content">
+                            <li>Laser Cutting</li>
+                            <li>Machining</li>
+                            <li>Fabrication</li>
+                            <li class="unavailable">Welding</li>
+                            <li class="unavailable">Poweder Coating</li>
+                        </ul>
+                        <div class="price"><sup>$</sup>144.00<sub>/Month</sub></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pricing-block style-two">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="category-wrapper">
+                            <div class="category">Standard Plan</div>
+                        </div>
+                        <div class="text">*rates are subject to change</div>
+                        <div class="link-btn"><a href="#" class="theme-btn"><span>Get Started<i
+                                        class="flaticon-right-arrow-3"></i></span></a></div>
+                        <ul class="content">
+                            <li>Laser Cutting</li>
+                            <li>Machining</li>
+                            <li>Fabrication</li>
+                            <li>Welding</li>
+                            <li class="unavailable">Poweder Coating</li>
+                        </ul>
+                        <div class="price"><sup>$</sup>299.00<sub>/Month</sub></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pricing-block">
+                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="category-wrapper">
+                            <div class="category">Advanced Plan</div>
+                        </div>
+                        <div class="text">*rates are subject to change</div>
+                        <div class="link-btn"><a href="#" class="theme-btn"><span>Get Started<i
+                                        class="flaticon-right-arrow-3"></i></span></a></div>
+                        <ul class="content">
+                            <li>Laser Cutting</li>
+                            <li>Machining</li>
+                            <li>Fabrication</li>
+                            <li>Welding</li>
+                            <li>Poweder Coating</li>
+                        </ul>
+                        <div class="price"><sup>$</sup>344.00<sub>/Month</sub></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form section -->
+    <section class="contact-form-section style-two"
+        style="background-image: url(frontend/assets/images/background/bg-6.jpg);">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sub-title">Estimation</div>
+                <h2>Request for a Free Quote</h2>
+                <div class="text">We have facility to produce advance work various industrial applications based on <br>
+                    specially developed technology.</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="wrapper-box">
+                        <!--Contact Form-->
+                        <div class="contact-form">
+                            <form method="post" action="{{ asset('frontend/assets/inc/sendmail.php') }}"
+                                id="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input id="name" type="text" name="form_name" value=""
+                                                placeholder="Your Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="text" name="email" value=""
+                                                placeholder="Your Email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="service">Service</label>
+                                            <select id="service" class="selectpicker" name="form_subject">
+                                                <option value="*">Chemical Research</option>
+                                                <option value=".category-1">About Company </option>
+                                                <option value=".category-3">Leadership Team</option>
+                                                <option value=".category-4">Global Networks</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea id="message" name="form_message" placeholder="Enter Your Massage"></textarea>
+                                        </div>
+                                        <div class="form-group-two">
+                                            <div class="form-btn">
+                                                <input id="form_botcheck" name="form_botcheck" class="form-control"
+                                                    type="hidden" value="">
+                                                <button class="theme-btn btn-style-one" type="submit"
+                                                    data-loading-text="Please wait..."><span>Send Now</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End Contact Form-->
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-block-two style-two">
+                        <div class="inner-box">
+                            <div class="icon"><img src="{{ asset('frontend/assets/images/icons/icon-43.png') }}"
+                                    alt=""></div>
+                            <h4>Subscribe Our <br> Newsletter</h4>
+                            <div class="text">Subscribe us & get updates in inbox</div>
+                            <div class="link-btn"><a href="#" class="theme-btn style-three"><span>Enter
+                                        Email</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section style-two -->
+    <section class="news-section style-two">
+        <div class="auto-container">
+            <div class="sec-title">
+                <div class="sub-title">News & Updates</div>
+                <h2>Latest From Our Blog</h2>
+            </div>
+            <div class="row">
+                <div class="theme_carousel owl-theme owl-carousel"
+                    data-options='{"loop": true, "center": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "2" } , "992":{ "items" : "3" }, "1200":{ "items" : "3" }}}'>
+                    @foreach($articles as $article)
+                    <div class="col-lg-12 news-block">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{ Storage::url($article->cover) }}" alt="">
+                                <div class="overlay-two">
+                                    <a href="{{ Storage::url($article->cover) }}"
+                                        class="lightbox-image" data-fancybox="gallery"><span
+                                            class="flaticon-zoom-in"></span></a>
+                                    <a href="{{ route('article.categories.detail', $article->slug) }}"><span class="flaticon-link"></span></a>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <div class="category">[<i class="fas fa-folder"></i> Manufacturing ]</div>
+                                <h3><a href="{{ route('article.categories.detail', $article->slug) }}">{{ $article->title }}</a>
+                                </h3>
+                                <ul class="post-meta">
+                                    <li><a href="#"><i class="far fa-clock"></i>{{ $article->created_at }}</a></li>
+                                    <li><a href="#"><i class="far fa-eye"></i>{{ views($article)->count() }}</a></li>
+                                </ul>
+                                <div class="post-share-btn">
+                                    <div class="social-links-wrapper">
+                                        <div class="icon"><span class="flaticon-share"></span>Share</div>
+                                        <ul class="social-links">
+                                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA section two -->
+    <section class="cta-section-two">
+        <div class="auto-container">
+            <div class="wrapper-box" style="background-image: url(frontend/assets/images/background/bg-8.jpg);">
                 <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <input class="form-control" id="contact-email" type="email" name="email" placeholder="Email"
-                      required="">
-                  </div>
+                    <div class="col-lg-8">
+                        <div class="left-content">
+                            <div class="icon"><i class="flaticon-portfolio-1"></i></div>
+                            <h3>Looking for a Job Opportunity? Apply Now.</h3>
+                            <div class="text">These cases are perfectly simple & easy to distinguish.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="link-btn"><a href="#" class="theme-btn style-three"><span>Job
+                                    Opening</span></a></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
             </div>
-          </div>
         </div>
-      </section><!-- End Contact Me Section -->
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.4419632115837!2d-0.31545398402676533!3d51.56013091466708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487613b3810101c3%3A0x62846e204598603f!2sWembley%2C%20UK!5e0!3m2!1sen!2sin!4v1646889711501!5m2!1sen!2sin"
-                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ======= Footer ======= -->
-      <footer id="footer">
-        <div class="container wow flipInX animated" data-wow-duration="2s">
-          <h3>Alex Smith</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi soluta perferendis maiores ullam beatae
-            inventore!</p>
-          <div class="social-links">
-            <a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="javascript:void(0)" class="google-plus"><i class="fab fa-skype"></i></a>
-            <a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <div class="copyright">
-            Copyright© &nbsp;<script>
-              document.write(new Date().getFullYear())
-            </script><a> Avs Technolabs </a>&nbsp;&nbsp;<i class="fa fa-heart wow pulse" data-wow-iteration="infinite"
-              data-wow-duration="500ms"></i>&nbsp;&nbsp;All rigths reserved
-          </div>
-        </div>
-      </footer><!-- End Footer -->
-
-    </main><!-- End main -->
-
-    <a href="#hero" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="fas fa-arrow-up"></i></a>
-    <!-- Mouse-Cursor -->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
-    <!-- Mouse-Cursor End-->
-  </div>
-  <!-- Purecounter JS-->
-  <script src="{{ asset('frontend/assets/js/purecounter.js') }}"></script>
-  <!-- Bootstrap JS-->
-  <script src="{{ asset('frontend/assets/js/bootstrap.bundle.min.js') }}"></script>
-  <!-- Glightbox Js-->
-  <script src="{{ asset('frontend/assets/js/glightbox.min.js') }}"></script>
-  <!-- Isotope JS-->
-  <script src="{{ asset('frontend/assets/js/isotope.pkgd.min.js') }}"></script>
-  <!-- Swiper JS-->
-  <script src="{{ asset('frontend/assets/js/swiper-bundle.min.js') }}"></script>
-  <!-- Noframework JS-->
-  <script src="{{ asset('frontend/assets/js/noframework.waypoints.js') }}"></script>
-  <!-- Jquery JS-->
-  <script src="{{ asset('frontend/assets/js/jquery.min.js') }}"></script>
-  <!-- Wow JS-->
-  <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script> 
-  <!-- typed JS-->
-  <script src="{{ asset('frontend/assets/js/typed.js') }}"></script>
-   <!-- Colors JS -->
-   <script src="{{ asset('frontend/assets/js/color.js') }}"></script>
-   <!-- Style switch -->
-   <script src="{{ asset('frontend/assets/js/style.switch.js') }}"></script>
-  <!-- Main JS-->
-  <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
-</body>
-
-</html>
+    </section>
+@endsection
