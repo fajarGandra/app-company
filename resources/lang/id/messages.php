@@ -22,4 +22,5 @@ return [
     'add' => 'Tambah',
     'description' => 'Deskripsi',
     'position' => 'Jabatan',
+    'text_color' => 'Warna Text',
 ];

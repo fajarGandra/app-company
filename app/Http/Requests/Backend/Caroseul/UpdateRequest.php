@@ -26,6 +26,9 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required', 
             'description' => 'required', 
+            'btn_link' => 'nullable', 
+            'btn_name' => 'nullable', 
+            'text_color' => 'nullable',
             'item_order' => 'required|numeric', 
             'image' => 'file|mimes:svg,jpg,jpeg,png|max:2048',
             'start_date' => 'required|date_format:Y-m-d|before_or_equal:end_date',

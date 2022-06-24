@@ -1,30 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  @include('frontend.include.meta')
-  @include('frontend.include.style')
+    @include('frontend.include.meta')
+    <title>Indasto Industries HTML Template</title>
+    @include('frontend.include.style')
+    @yield('page-css')
 </head>
 
-<body>
-  @include('frontend.include.header')
+<body class="theme-color-two">
 
-  <main id="main">
-    @yield('content')
-  </main><!-- End #main -->
+    <div class="page-wrapper">
+        @include('frontend.include.header')
 
-  @include('frontend.include.footer')
+        @include('frontend.include.hidden_sidebar')
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        @include('frontend.include.search_popup')
 
-  <div id="preloader"></div>
+        @yield('content')
 
-  
-  @stack('pre-main-scripts')
-  @include('frontend.include.script')
-  @stack('post-main-scripts')
+        @include('frontend.include.footer')
 
+    </div>
+    <!--End pagewrapper-->
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-arrow-1"></span></div>
+
+    @include('frontend.include.script')
+    @stack('content_scripts')
 
 </body>
 
